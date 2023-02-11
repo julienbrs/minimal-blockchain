@@ -1,13 +1,17 @@
 import server from "./server";
+import wallet from "./local-metamask";
 
-function Wallet({ address, setAddress, balance, setBalance }) {
-  async function onChange(evt) {
-    const address = evt.target.value;
-    setAddress(address);
-    if (address) {
+function Wallet({ user, setUser, balance, setBalance }) {
+  async function handleSelect(evt) {
+    const currentUser = evt.target.value;
+    setUser(currentUser);
+    if (currentUser) {
+      const address = wallet.getAddress(currentUser);
+      console.log("Address is : ", address);
       const {
         data: { balance },
       } = await server.get(`balance/${address}`);
+      console.log("balance is : ", balance);
       setBalance(balance);
     } else {
       setBalance(0);
@@ -19,8 +23,12 @@ function Wallet({ address, setAddress, balance, setBalance }) {
       <h1>Your Wallet</h1>
 
       <label>
-        Wallet Address
-        <input placeholder="Type an address, for example: 0x1" value={address} onChange={onChange}></input>
+        User
+        <input
+          placeholder="Enter your user"
+          value={user}
+          onChange={handleSelect}
+        ></input>
       </label>
 
       <div className="balance">Balance: {balance}</div>

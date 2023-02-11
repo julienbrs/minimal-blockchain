@@ -11,6 +11,7 @@ const ACCOUNTS = new Map([
     {
       privatekey:
         "a5e248607d841cea049668261e7d1e8c1a5ac2f033dd61d3282e1a932899abf4",
+      public: "0x92c18278ef31d0c69cb2",
     },
   ],
   [
@@ -18,6 +19,7 @@ const ACCOUNTS = new Map([
     {
       privatekey:
         "23356e1f460c2b44937ad0278112025784c2a4a0bb69a278f084204bf50f3d70",
+      public: "0xd245057209a70c478a4f",
     },
   ],
   [
@@ -25,6 +27,7 @@ const ACCOUNTS = new Map([
     {
       privatekey:
         "ce0cd0e82eaa317e4c1576e8e22104f0c804a64e80c081143b3995df5a6cb40e",
+      public: "0x57a4d9a23dc0e1c11e9a",
     },
   ],
 ]);
@@ -32,6 +35,7 @@ const ACCOUNTS = new Map([
 const USERS = Array.from(ACCOUNTS.keys());
 
 const getAddress = (username) => {
+  if (!username) return null;
   const privKey = ACCOUNTS.get(username).privatekey;
   const fullPubKey = secp.getPublicKey(privKey);
   return "0x" + toHex(fullPubKey).slice(-20);
@@ -59,8 +63,11 @@ const sign = async (username, message) => {
   return toHex(fullSignature);
 };
 
-console.log("Address of Bob is: ", getAddress("bob"));
-console.log("Public key of Bob is: ", getPublicKey("bob"));
+// console.log("Address of Alice is: ", getAddress("alice"));
+// console.log("Address of Bob is: ", getAddress("bob"));
+// console.log("Address of Max is: ", getAddress("max"));
+
+// console.log("Public key of Bob is: ", getPublicKey("bob"));
 
 const wallet = {
   USERS,
