@@ -11,7 +11,7 @@ const ACCOUNTS = new Map([
     {
       privatekey:
         "a5e248607d841cea049668261e7d1e8c1a5ac2f033dd61d3282e1a932899abf4",
-      public: "0x92c18278ef31d0c69cb2",
+      public: "92c18278ef31d0c69cb2",
     },
   ],
   [
@@ -19,7 +19,7 @@ const ACCOUNTS = new Map([
     {
       privatekey:
         "23356e1f460c2b44937ad0278112025784c2a4a0bb69a278f084204bf50f3d70",
-      public: "0xd245057209a70c478a4f",
+      public: "d245057209a70c478a4f",
     },
   ],
   [
@@ -27,7 +27,7 @@ const ACCOUNTS = new Map([
     {
       privatekey:
         "ce0cd0e82eaa317e4c1576e8e22104f0c804a64e80c081143b3995df5a6cb40e",
-      public: "0x57a4d9a23dc0e1c11e9a",
+      public: "57a4d9a23dc0e1c11e9a",
     },
   ],
 ]);
@@ -38,7 +38,7 @@ const getAddress = (username) => {
   if (!username) return null;
   const privKey = ACCOUNTS.get(username).privatekey;
   const fullPubKey = secp.getPublicKey(privKey);
-  return "0x" + toHex(fullPubKey).slice(-20);
+  return toHex(fullPubKey).slice(-20);
 };
 
 const getPublicKey = (username) => {
@@ -53,13 +53,13 @@ const getPrivateKey = (username) => {
 const hashMessage = (message) => keccak256(Uint8Array.from(message));
 
 const sign = async (username, message) => {
-  const privKey = getPrivateKey(username);
-  const messageHash = hashMessage(message);
-  [signature, recoveryBit] = await secp.sign(messageHash, privKey, {
+  const privateKey = getPrivateKey(username);
+  const hash = hashMessage(message);
+
+  const [signature, recoveryBit] = await secp.sign(hash, privateKey, {
     recovered: true,
   });
-
-  const fullSignature = new Uint8Array(recoveryBit, ...signature);
+  const fullSignature = new Uint8Array([recoveryBit, ...signature]);
   return toHex(fullSignature);
 };
 

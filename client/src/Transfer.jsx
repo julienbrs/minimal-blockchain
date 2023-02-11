@@ -1,7 +1,8 @@
 import { useState } from "react";
 import server from "./server";
+import wallet from "./local-metamask";
 
-function Transfer({ address, setBalance }) {
+function Transfer({ user, setBalance }) {
   const [sendAmount, setSendAmount] = useState("");
   const [recipient, setRecipient] = useState("");
 
@@ -10,17 +11,26 @@ function Transfer({ address, setBalance }) {
   async function transfer(evt) {
     evt.preventDefault();
 
+    const message = {
+      amount: parseInt(sendAmount),
+      recipient,
+    };
+    const signature = await wallet.sign(user, message);
+    const transaction = {
+      message,
+      signature,
+    };
+    console.log("transaction = ", transaction);
+
     try {
       const {
         data: { balance },
-      } = await server.post(`send`, {
-        sender: address,
-        amount: parseInt(sendAmount),
-        recipient,
-      });
+      } = await server.post(`send`, transaction);
+
       setBalance(balance);
+      console.log("new balance = ", balance);
     } catch (ex) {
-      alert(ex.response.data.message);
+      alert(ex);
     }
   }
 
