@@ -1,0 +1,11 @@
+body {
+  background-image: url("../public/blockchain_bg.png") !important;
+  height: 100%;
+  width: 100%;
+  font-family: "Muli", sans-serif;
+  font-weight: 300;
+  background-color: #244362 !important;
+  padding: 40px;
+  background-position: 0% 35% !important;
+  background-size: cover !important;
+}

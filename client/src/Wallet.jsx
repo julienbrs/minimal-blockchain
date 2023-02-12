@@ -1,5 +1,6 @@
 import server from "./server";
 import wallet from "./local-metamask";
+import { Box, Heading, Input, Text } from "@chakra-ui/react";
 
 function Wallet({ user, setUser, balance, setBalance }) {
   async function handleSelect(evt) {
@@ -19,20 +20,16 @@ function Wallet({ user, setUser, balance, setBalance }) {
   }
 
   return (
-    <div className="container wallet">
-      <h1>Your Wallet</h1>
-
-      <label>
-        User
-        <input
-          placeholder="Enter your user"
-          value={user}
-          onChange={handleSelect}
-        ></input>
-      </label>
-
-      <div className="balance">Balance: {balance}</div>
-    </div>
+    <Box padding={"3%"}>
+      <Heading>Your wallet</Heading>
+      <Input
+        placeholder="Enter your username"
+        size="xs"
+        value={user}
+        onChange={handleSelect}
+      />
+      <Text>Balance: {balance}</Text>
+    </Box>
   );
 }
 
