@@ -21,7 +21,7 @@ function Wallet({ user, setUser, balance, setBalance }) {
 
   return (
     <Box>
-      <Heading color="yellow.500" >Your wallet</Heading>
+      <Heading color="yellow.500">Your wallet</Heading>
       <Input
         borderRadius={"10px"}
         borderColor={"yellow.500"}
@@ -29,13 +29,12 @@ function Wallet({ user, setUser, balance, setBalance }) {
         placeholder="Enter your username"
         size="xs"
         value={user}
-        _placeholder={{ color: 'black' , fontSize: "1.1em", fontWeight: "bold" }}
+        _placeholder={{ color: "black", fontSize: "1.1em", fontWeight: "bold" }}
         onChange={handleSelect}
         py={"2vh"}
         my={"1vh"}
       />
       <Text color={"yellow.500"}>Balance: {balance}</Text>
-
     </Box>
   );
 }

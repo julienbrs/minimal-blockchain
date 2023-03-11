@@ -62,13 +62,6 @@ const sign = async (username, message) => {
   const fullSignature = new Uint8Array([recoveryBit, ...signature]);
   return toHex(fullSignature);
 };
-
-// console.log("Address of Alice is: ", getAddress("alice"));
-// console.log("Address of Bob is: ", getAddress("bob"));
-// console.log("Address of Max is: ", getAddress("max"));
-
-// console.log("Public key of Bob is: ", getPublicKey("bob"));
-
 const wallet = {
   USERS,
   getAddress,

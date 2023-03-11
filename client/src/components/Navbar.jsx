@@ -15,7 +15,7 @@ import {
   List,
   UnorderedList,
   ListItem,
-  Link
+  Link,
 } from "@chakra-ui/react";
 
 import { useState } from "react";
@@ -109,49 +109,80 @@ function ProjectOverview() {
 function Features() {
   return (
     <Box>
-    <UnorderedList>
-      <ListItem>Public Key Cryptography to ensure secure transactions</ListItem>
-      <ListItem>Private Key Ownership Verification to prevent unauthorized transactions</ListItem>
-      <ListItem>Centralized Server for consistent and secure transaction processing</ListItem>
-      <ListItem>Transaction History and Balances for transparent record-keeping</ListItem>
-    </UnorderedList>
+      <UnorderedList>
+        <ListItem>
+          Public Key Cryptography to ensure secure transactions
+        </ListItem>
+        <ListItem>
+          Private Key Ownership Verification to prevent unauthorized
+          transactions
+        </ListItem>
+        <ListItem>
+          Centralized Server for consistent and secure transaction processing
+        </ListItem>
+        <ListItem>
+          Transaction History and Balances for transparent record-keeping
+        </ListItem>
+      </UnorderedList>
     </Box>
   );
 }
 
-
 function BcBasics() {
   return (
     <Box>
-    <UnorderedList>
-      <ListItem>
-        <Link href="https://www.investopedia.com/terms/b/blockchain.asp" isExternal>
-          What is Blockchain? - Investopedia
-        </Link>
-      </ListItem>
-      <ListItem>
-        <Link href="https://www.ibm.com/blockchain/what-is-blockchain" isExternal>
-          What is Blockchain Technology? - IBM
-        </Link>
-      </ListItem>
-      <ListItem>
-        <Link href="https://blockchainhub.net/blockchain-explained/" isExternal>
-          Blockchain Explained: A Guide for Beginners - Blockchain Hub
-        </Link>
-      </ListItem>
-      <ListItem>
-      <Link href="https://www.investopedia.com/terms/b/bitcoin.asp" isExternal>What is Bitcoin? - Investopedia</Link>
-    </ListItem>
-    <ListItem>
-      <Link href="https://ethereum.org/en/what-is-ethereum/" isExternal>What is Ethereum? - Ethereum Foundation</Link>
-    </ListItem>
-    <ListItem>
-      <Link href="https://www.youtube.com/watch?v=SSo_EIwHSd4" isExternal>How Does Blockchain Work? - Simply Explained</Link>
-    </ListItem>
-    <ListItem>
-      <Link href="https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm" isExternal>What is ECDSA in cryptography? - Wikipedia </Link>
-    </ListItem>
-    </UnorderedList>
+      <UnorderedList>
+        <ListItem>
+          <Link
+            href="https://www.investopedia.com/terms/b/blockchain.asp"
+            isExternal
+          >
+            What is Blockchain? - Investopedia
+          </Link>
+        </ListItem>
+        <ListItem>
+          <Link
+            href="https://www.ibm.com/blockchain/what-is-blockchain"
+            isExternal
+          >
+            What is Blockchain Technology? - IBM
+          </Link>
+        </ListItem>
+        <ListItem>
+          <Link
+            href="https://blockchainhub.net/blockchain-explained/"
+            isExternal
+          >
+            Blockchain Explained: A Guide for Beginners - Blockchain Hub
+          </Link>
+        </ListItem>
+        <ListItem>
+          <Link
+            href="https://www.investopedia.com/terms/b/bitcoin.asp"
+            isExternal
+          >
+            What is Bitcoin? - Investopedia
+          </Link>
+        </ListItem>
+        <ListItem>
+          <Link href="https://ethereum.org/en/what-is-ethereum/" isExternal>
+            What is Ethereum? - Ethereum Foundation
+          </Link>
+        </ListItem>
+        <ListItem>
+          <Link href="https://www.youtube.com/watch?v=SSo_EIwHSd4" isExternal>
+            How Does Blockchain Work? - Simply Explained
+          </Link>
+        </ListItem>
+        <ListItem>
+          <Link
+            href="https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm"
+            isExternal
+          >
+            What is ECDSA in cryptography? - Wikipedia{" "}
+          </Link>
+        </ListItem>
+      </UnorderedList>
     </Box>
   );
 }
