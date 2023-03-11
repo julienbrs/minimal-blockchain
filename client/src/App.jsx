@@ -16,6 +16,8 @@ function App() {
         w={"40%"}
         marginLeft={"auto"}
         borderRadius={"20px"}
+        borderColor={"cyan.900"}
+        borderWidth={"2px"}
         bg={"rgba(36, 49, 69, 0.4)"}
         height={"60vh"}
         mt={"10vh"}
