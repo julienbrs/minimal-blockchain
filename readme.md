@@ -1,31 +1,97 @@
-## ECDSA Node
+<a name="readme-top"></a>
+[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/julienbrs)
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-This project is an example of using a client and server to facilitate transfers between different addresses. Since there is just a single server on the back-end handling transfers, this is clearly very centralized. We won't worry about distributed consensus for this project.
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a>
+    <img src="client/public/logo.jpg" alt="Logo" width="120" height="120">
+  </a>
+  </a>
+  <h3 align="center">
+    <a href="https://github.com/julienbrs/minimal-blockchain">Centralized Minimal Blockchain</a>
+  </h3>
+  </p>
+</div>
+<!-- TABLE OF CONTENTS -->
 
-However, something that we would like to incoporate is Public Key Cryptography. By using Elliptic Curve Digital Signatures we can make it so the server only allows transfers that have been signed for by the person who owns the associated address.
+## Table of Contents
 
-### Video instructions
-For an overview of this project as well as getting started instructions, check out the following video:
+- [About the Project](#about-the-project)
+  - [Features](#features)
+  - [Limitations](#limitations)
+- [Getting Started](#getting-started)
+  - [Client](#client)
+  - [Server](#server)
+- [Ressources](#ressources)
+- [License](#license)
+- [Contact](#contact)
 
-https://www.loom.com/share/0d3c74890b8e44a5918c4cacb3f646c4
- 
+## About the project
+
+Simple blockchain project node using ECDSA technology that demonstrates the power of public key cryptography in securing transactions between accounts. With this project, you can safely transfer funds from one account to another using digital signatures, which ensure that only the user with the appropriate private key can authorize a transaction.
+
+<div align="center">
+    <a>
+        <img src="client/public/screenshot.png" alt="Logo" width="90%" height="90%">
+    </a>
+</div>
+
+## Features
+
+- Public key cryptography: Transactions are secured using digital signatures that verify the identity of the sender.
+- Private key ownership verification: Users must verify that they own the private key corresponding to the address that is sending funds.
+- Centralized server: Transactions are processed by a single server, which ensures consistency and security.
+- Local Wallet: Users can create a wallet and store their private key locally.
+- Transaction history: Users can view their transaction history and balances: To be implemented
+
+## Limitations
+
+- Trust in server operator: Since the server is centralized, users must trust the operator not to act maliciously.
+- Centralization: The centralized nature of the server may limit scalability and decentralization efforts.
+- Simplified implementation: This project is intended as a learning exercise and does not include all the features or complexities of a real-world blockchain.
+
+## How to get started
+
 ### Client
 
 The client folder contains a [react app](https://reactjs.org/) using [vite](https://vitejs.dev/). To get started, follow these steps:
 
 1. Open up a terminal in the `/client` folder
 2. Run `npm install` to install all the depedencies
-3. Run `npm run dev` to start the application 
+3. Run `npm run dev` to start the application
 4. Now you should be able to visit the app at http://127.0.0.1:5173/
 
 ### Server
 
 The server folder contains a node.js server using [express](https://expressjs.com/). To run the server, follow these steps:
 
-1. Open a terminal within the `/server` folder 
-2. Run `npm install` to install all the depedencies 
-3. Run `node index` to start the server 
+1. Open a terminal within the `/server` folder
+2. Run `npm install` to install all the depedencies
+3. Run `node index` to start the server
 
-The application should connect to the default server port (3042) automatically! 
+The application should connect to the default server port (3042) automatically!
 
-_Hint_ - Use [nodemon](https://www.npmjs.com/package/nodemon) instead of `node` to automatically restart the server on any changes.
+- Use [nodemon](https://www.npmjs.com/package/nodemon) instead of `node` to automatically restart the server on any changes.
+
+## Ressources
+
+- [Blockchain Basics](https://www.investopedia.com/terms/b/blockchain.asp): An introduction to blockchain technology
+- [Bitcoin Whitepaper](https://bitcoin.org/bitcoin.pdf): The original Bitcoin whitepaper by Satoshi Nakamoto
+- [Ethereum Whitepaper](https://ethereum.org/en/whitepaper/): The Ethereum whitepaper by Vitalik Buterin
+- [Elliptic Curve Digital Signature Algorithm (ECDSA)](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm): An explanation of ECDSA on Wikipedia
+- [Secp256k1](https://en.bitcoin.it/wiki/Secp256k1): The elliptic curve used by Bitcoin and other cryptocurrencies
+
+## License
+
+This project is licensed under the MIT License
+
+## Contact
+
+Bourseau Julien - _2nd year student at Ensimag, 2022_ - [Linkedin](https://www.linkedin.com/in/julien-bourseau-ba2239228)
+
+Project Link: [Minimal-blockchain](https://github.com/julienbrs/minimal-blockchain)
+
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/julien-bourseau-ba2239228
