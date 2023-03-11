@@ -20,6 +20,7 @@ function App() {
         height={"60vh"}
         mt={"10vh"}
         mr={"7vw"}
+        p={"4vw"}
       >
         <Wallet
           balance={balance}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import server from "./server";
 import wallet from "./local-metamask";
+import { Box, Heading, Input, Text, Button  } from "@chakra-ui/react";
 
 function Transfer({ user, setBalance }) {
   const [sendAmount, setSendAmount] = useState("");
@@ -35,29 +36,55 @@ function Transfer({ user, setBalance }) {
   }
 
   return (
-    <form className="container transfer" onSubmit={transfer}>
-      <h1>Send Transaction</h1>
+    <Box py={"5vh"}>
+      <form className="container transfer" onSubmit={transfer}>
+        <Text color={"yellow.500"} fontWeight={"semibold"} >Transaction Info:</Text>
 
-      <label>
-        Send Amount
-        <input
-          placeholder="1, 2, 3..."
-          value={sendAmount}
-          onChange={setValue(setSendAmount)}
-        ></input>
-      </label>
+        <label>
+          <Box display={"flex"} flexDirection={"row"} justifyItems={"center"} alignItems={"center"}>
+          <Text color={"yellow.500"}  width={"50%"}>
+          Send Amount
+          </Text>
+          <Input
+            borderRadius={"10px"}
+            borderColor={"yellow.500"}
+            backgroundColor={"yellow.100"}
+            placeholder="amount to send"
+            size="xs"
+            _placeholder={{ color: 'black' , fontSize: "1.1em", fontWeight: "bold" }}
+            py={"2vh"}
+            my={"1vh"}
+            value={sendAmount}
+            onChange={setValue(setSendAmount)}
+          ></Input>
+          </Box>
+        </label>
 
-      <label>
-        Recipient
-        <input
-          placeholder="Type an address, for example: 0x2"
-          value={recipient}
-          onChange={setValue(setRecipient)}
-        ></input>
-      </label>
+        <label>
+          <Box display={"flex"} flexDirection={"row"} justifyItems={"center"} alignItems={"center"}>
+            <Text color={"yellow.500"}  width={"50%"}>
+            Recipient
+            </Text>
+            <Input
+              borderRadius={"10px"}
+              borderColor={"yellow.500"}
+              backgroundColor={"yellow.100"}
+              placeholder="address of recipient"
+              size="xs"
+              _placeholder={{ color: 'black' , fontSize: "1.1em", fontWeight: "bold" }}
+              py={"2vh"}
+              my={"1vh"}
+              value={recipient}
+              onChange={setValue(setRecipient)}
+            ></Input>
+          </Box>
+        </label>
 
-      <input type="submit" className="button" value="Transfer" />
-    </form>
+        <Button>
+          <input type="submit" className="button" value="Transfer" />
+        </Button>
+      </form>
+    </Box>
   );
 }
 

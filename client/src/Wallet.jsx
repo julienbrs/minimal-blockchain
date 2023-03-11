@@ -20,15 +20,22 @@ function Wallet({ user, setUser, balance, setBalance }) {
   }
 
   return (
-    <Box padding={"3%"}>
-      <Heading>Your wallet</Heading>
+    <Box>
+      <Heading color="yellow.500" >Your wallet</Heading>
       <Input
+        borderRadius={"10px"}
+        borderColor={"yellow.500"}
+        backgroundColor={"yellow.100"}
         placeholder="Enter your username"
         size="xs"
         value={user}
+        _placeholder={{ color: 'black' , fontSize: "1.1em", fontWeight: "bold" }}
         onChange={handleSelect}
+        py={"2vh"}
+        my={"1vh"}
       />
-      <Text>Balance: {balance}</Text>
+      <Text color={"yellow.500"}>Balance: {balance}</Text>
+
     </Box>
   );
 }
