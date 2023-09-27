@@ -30,7 +30,7 @@
 
 ## About the project
 
-Simple blockchain project node using ECDSA technology that demonstrates the power of public key cryptography in securing transactions between accounts. With this project, you can safely transfer funds from one account to another using digital signatures, which ensure that only the user with the appropriate private key can authorize a transaction.
+Simple blockchain project node using ECDSA technology that demonstrates the power of public key cryptography in securing transactions between local accounts. With this project, you can safely transfer funds locally from one account to another using digital signatures, which ensure that only the user with the appropriate private key can authorize a transaction.
 
 <div align="center">
     <a>
